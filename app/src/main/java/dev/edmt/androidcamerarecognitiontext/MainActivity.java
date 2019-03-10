@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
-    TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+    TextRecognizer textRecognizer;
     ArrayList<String> list=new ArrayList<>();
 
     @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
         textView = (TextView) findViewById(R.id.text_view);
-
+        textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if (!textRecognizer.isOperational()) {
             Log.w("MainActivity", "Detector dependencies are not yet available");
         } else {
