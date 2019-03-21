@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidCameraRecognitionText.iml" filepath="$PROJECT_DIR$/AndroidCameraRecognitionText.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidCameraRecognitionText-master.iml" filepath="$PROJECT_DIR$/AndroidCameraRecognitionText-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

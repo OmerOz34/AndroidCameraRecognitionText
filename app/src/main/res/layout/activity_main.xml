@@ -17,7 +17,6 @@
       android:layout_height="match_parent" />
 
     <TextView
-        android:visibility="invisible"
         android:id="@+id/text_view"
         android:text="No Text"
         android:layout_alignParentBottom="true"
@@ -27,11 +26,11 @@
         android:layout_height="wrap_content" />
 
   <Button
-android:onClick="GoAnother"
-      android:id="@+id/button2"
+      android:onClick="GoOther"
+      android:id="@+id/button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_above="@+id/text_view"
+      android:layout_alignParentBottom="true"
       android:layout_centerHorizontal="true"
-      android:text="Button" />
+      android:layout_marginBottom="97dp" />
 </RelativeLayout>

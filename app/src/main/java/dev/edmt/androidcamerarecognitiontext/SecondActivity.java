@@ -16,7 +16,8 @@ public class SecondActivity extends AppCompatActivity {
 
         TextView textView= (TextView) findViewById(R.id.ODUUUUUUUUU);
         Intent intent = getIntent();
-        ArrayList<String> list=intent.getStringArrayListExtra("liat");
-        textView.setText(list.get(0).toString());
+        String s=getIntent().getStringExtra("string");
+        textView.setText(s);
+
     }
 }
