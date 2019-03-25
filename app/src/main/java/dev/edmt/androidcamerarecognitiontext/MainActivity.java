@@ -156,11 +156,12 @@ public class MainActivity extends AppCompatActivity {
                         text=text+item.getValue()+space;
                         stringBuilder.append("\n");
                     }
-                    Intent i=new Intent(MainActivity.this,SecondActivity.class);
-                    i.putExtra("string",text);
-                    startActivity(i);
-                }
 
+                }
+                else text="Could not recognise any text";
+                Intent i=new Intent(MainActivity.this,SecondActivity.class);
+                i.putExtra("string",text);
+                startActivity(i);
             }
         });
 
