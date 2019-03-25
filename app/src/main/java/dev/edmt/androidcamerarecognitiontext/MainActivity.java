@@ -136,9 +136,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void TakePicture(View view){
         button.setBackgroundResource(R.drawable.button2);
+
+
+
+
+
         cameraSource.takePicture(null, new CameraSource.PictureCallback() {
             @Override
             public void onPictureTaken(byte[] bytes) {
+
+
+
 
                 Bitmap myBitmap=BitmapFactory.decodeByteArray(bytes, 0, bytes.length,options);
                 Frame frame = new Frame.Builder().setBitmap(myBitmap).build();
@@ -148,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
                     StringBuilder stringBuilder = new StringBuilder();
                     text="";
-                    for(int i =0;i<items.size();++i)
+                    for(int i =0;i<items.size();i++)
                     {
                         TextBlock item = items.valueAt(i);
                         list.add(item.getValue());
