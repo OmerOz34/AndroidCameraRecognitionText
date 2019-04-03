@@ -84,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
        // textView = (TextView) findViewById(R.id.text_view);
         button=(ImageButton)findViewById(R.id.ButtonView);
          textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+
+
+
+        Intent i=new Intent(MainActivity.this,SecondActivity.class);
+        startActivity(i);
+
+
+
         if (!textRecognizer.isOperational()) {
             Log.w("MainActivity", "Detector dependencies are not yet available");
         } else {
@@ -169,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 else text="Could not recognise any text";
                 Intent i=new Intent(MainActivity.this,SecondActivity.class);
                 i.putExtra("string",text);
+                i.putStringArrayListExtra("array",list);
                 startActivity(i);
             }
         });

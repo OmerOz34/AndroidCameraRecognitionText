@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OCR-Translate</string>
+    <string name="Base_Url">https://translate.yandex.net/api/v1.5/tr.json/</string>
+
+
+
 </resources>
