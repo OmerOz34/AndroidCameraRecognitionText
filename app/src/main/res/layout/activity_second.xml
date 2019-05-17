@@ -19,6 +19,7 @@
         android:textColorLink="?android:attr/colorForeground" />
 
     <Button
+        android:onClick="Translate"
         android:layout_weight="1"
         android:text="ÇEVİR"
         android:layout_width="match_parent"

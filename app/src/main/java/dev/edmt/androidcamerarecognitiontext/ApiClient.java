@@ -1,6 +1,7 @@
 package dev.edmt.androidcamerarecognitiontext;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -8,6 +9,13 @@ public class ApiClient {
 
 
     private static Retrofit retrofit = null;
+
+    public static OkHttpClient GetClient(){
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        return  httpClient.addInterceptor(logging).build();
+    }
 
     public static Retrofit getClient(){
         if(retrofit== null){

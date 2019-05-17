@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,12 +14,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class SecondActivity extends AppCompatActivity {
 
     EditText editText;
     ArrayList<String> list;
     ApiInterface apiInterface;
     String text;
+    String langcode;
+    String  transl="";
     Recognition recognition=new Recognition();
     Translate translate=new Translate();
     public final String APIKEY="trnsl.1.1.20190201T180527Z.7edab1ce7e8ea3ba.f9ade9de839798c673c125a958b936e3090f4d78";
@@ -28,12 +32,17 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         editText=(EditText) findViewById(R.id.edittext);
-         text=getIntent().getStringExtra("string");
+        text=getIntent().getStringExtra("string");
         list=getIntent().getStringArrayListExtra("array");
-        //editText.setText(text, TextView.BufferType.EDITABLE);
+        for(int i=0; i<list.size(); i++){
+            transl = " " + transl + " " + list.get(i);
+        }
 
 
-    Retro();
+
+        editText.setText(transl, TextView.BufferType.EDITABLE);
+
+
 
 
     }
@@ -47,28 +56,28 @@ public class SecondActivity extends AppCompatActivity {
 
         apiInterface=ApiClient.getClient().create(ApiInterface.class);
 
-        Call<Recognition> call=apiInterface.RecogniseLang("trnsl.1.1.20190201T180527Z.7edab1ce7e8ea3ba.f9ade9de839798c673c125a958b936e3090f4d78","pool");
+        Call<Recognition> call=apiInterface.RecogniseLang("trnsl.1.1.20190201T180527Z.7edab1ce7e8ea3ba.f9ade9de839798c673c125a958b936e3090f4d78",editText.getText().toString());
 
-      call.enqueue(new Callback<Recognition>() {
-          @Override
-          public void onResponse(@NonNull Call<Recognition> call, @NonNull Response<Recognition> response) {
+        call.enqueue(new Callback<Recognition>() {
+            @Override
+            public void onResponse(@NonNull Call<Recognition> call, @NonNull Response<Recognition> response) {
 
-                Log.d("**************vCODE",""+response.body().getCode());
-                Log.d("**************lang",""+response.body().getLang());
-              recognition.setCode(response.body().getCode());
-              recognition.setLang(response.body().getLang());
+                Log.d("******vCODE",""+response.body().getCode());
+                Log.d("******lang",""+response.body().getLang());
+                recognition.setCode(response.body().getCode());
+                recognition.setLang(response.body().getLang());
+
+                langcode = recognition.getLang() + "-tr";
+            }
+
+            @Override
+            public void onFailure(Call<Recognition> call, Throwable t) {
+
+            }
+        });
 
 
-          }
-
-          @Override
-          public void onFailure(Call<Recognition> call, Throwable t) {
-
-          }
-      });
-
-
-        Call<Translate> call2=apiInterface.Translate(APIKEY,"school","en-tr");
+        Call<Translate> call2=apiInterface.Translate(APIKEY,editText.getText().toString(),langcode);
         call2.enqueue(new Callback<Translate>() {
             @Override
             public void onResponse(Call<Translate> call, Response<Translate> response) {
@@ -76,8 +85,8 @@ public class SecondActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     translate.setText(response.body().getText());
                     translate.setCode(response.body().getCode());
-                    Log.d("******222222222222222",""+response.body().getCode());
-                    Log.d("**************lang2222",""+response.body().getText());
+                    Log.d("****222222222222222",""+response.body().getCode());
+                    Log.d("******lang2222",""+response.body().getText());
 
                 }
 
@@ -95,6 +104,11 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
+    public void Translate(View view) {
+
+        Retro();
+
+    }
 }
 
 

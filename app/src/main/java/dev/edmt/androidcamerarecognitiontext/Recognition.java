@@ -7,16 +7,16 @@ public class Recognition {
 
     @SerializedName("code")
     @Expose
-    private int code;
-
+    private Integer code;
     @SerializedName("lang")
     @Expose
     private String lang;
 
+    public Integer getCode() {
+        return code;
+    }
 
-    public int getCode() { return code; }
-
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
