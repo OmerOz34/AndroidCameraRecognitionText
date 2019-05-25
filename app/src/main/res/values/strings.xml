@@ -2,6 +2,19 @@
     <string name="app_name">OCR-Translate</string>
     <string name="Base_Url">https://translate.yandex.net/api/v1.5/tr.json/</string>
 
+    <string-array name="languages">
 
+        <item>türkçe</item>
+        <item>english</item>
+        <item>français</item>
+        <item>deutsch</item>
+        <item>italiano</item>
+        <item>espanol</item>
+        <item>nederlands</item>
+        <item>русский</item>
+        <item>português</item>
+
+
+    </string-array>
 
 </resources>

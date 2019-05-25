@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/option1"
+        android:title="Türkçe"
+        android:icon="@drawable/tr"/>
+    <item
+        android:id="@+id/option2"
+        android:title="English"
+        android:icon="@drawable/us"/>
+    <item
+        android:id="@+id/option3"
+        android:title="Deutsch"
+        android:icon="@drawable/de"/>
+    <item
+        android:id="@+id/option4"
+        android:title="Français"
+        android:icon="@drawable/fr"/>
+    <item
+        android:id="@+id/option5"
+        android:title="Español"
+        android:icon="@drawable/es"/>
+    <item
+        android:id="@+id/option6"
+        android:title="italiano"
+        android:icon="@drawable/it"/>
+    <item
+        android:id="@+id/option7"
+        android:title="Nederlands"
+        android:icon="@drawable/nl"/>
+
+</menu>
