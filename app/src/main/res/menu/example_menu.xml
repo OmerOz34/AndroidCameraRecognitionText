@@ -4,31 +4,25 @@
 
     <item
         android:id="@+id/option1"
-        android:title="Türkçe"
-        android:icon="@drawable/tr"/>
+        android:title="Türkçe"/>
     <item
+
         android:id="@+id/option2"
-        android:title="English"
-        android:icon="@drawable/us"/>
+        android:title="English"/>
     <item
         android:id="@+id/option3"
-        android:title="Deutsch"
-        android:icon="@drawable/de"/>
+        android:title="Deutsch"/>
     <item
         android:id="@+id/option4"
-        android:title="Français"
-        android:icon="@drawable/fr"/>
+        android:title="Français"/>
     <item
         android:id="@+id/option5"
-        android:title="Español"
-        android:icon="@drawable/es"/>
+        android:title="Español"/>
     <item
         android:id="@+id/option6"
-        android:title="italiano"
-        android:icon="@drawable/it"/>
+        android:title="italiano"/>
     <item
         android:id="@+id/option7"
-        android:title="Nederlands"
-        android:icon="@drawable/nl"/>
+        android:title="Nederlands"/>
 
 </menu>

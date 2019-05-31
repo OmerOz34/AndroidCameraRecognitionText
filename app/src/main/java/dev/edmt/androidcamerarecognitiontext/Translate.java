@@ -23,19 +23,19 @@ public class Translate {
     private ArrayList<String> text;
 
 
-    public ArrayList<String> getText() {
+    ArrayList<String> getText() {
         return text;
     }
 
-    public void setText(ArrayList<String> text) {
+     void setText(ArrayList<String> text) {
         this.text = text;
     }
 
-    public String getCode() {
+     String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+     void setCode(String code) {
         this.code = code;
     }
 

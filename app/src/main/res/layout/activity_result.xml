@@ -5,23 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ResultActivity"
-    android:weightSum="10">
+    android:weightSum="9"
+    android:background="@color/primaryDarkColor"
+    tools:context=".ResultActivity">
+
+
+
 
     <TextView
-        android:layout_weight="9"
-        android:layout_margin="5dp"
-        android:id="@+id/tw_result"
+        android:textSize="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/primaryColor"
+        android:layout_weight="7"
+        android:layout_margin="10dp"
+        android:id="@+id/tw_translated"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="TextView"
         />
-
     <Button
         android:onClick="GoBack"
-        android:layout_weight="1"
         android:id="@+id/button"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/buttonColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="2"
+        android:text="New Request" />
+
+
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,15 +16,11 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.android.gms.vision.CameraSource;
-import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -41,21 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case RequestCameraPermissionID: {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                        return;
-                    }
-                    try {
-                        cameraSource.start(cameraView.getHolder());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+        if (requestCode == RequestCameraPermissionID) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    return;
                 }
+                try {
+                    cameraSource.start(cameraView.getHolder());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
-            break;
         }
     }
 
@@ -80,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cameraView = (SurfaceView) findViewById(R.id.surface_view);
+        cameraView =  findViewById(R.id.surface_view);
        // textView = (TextView) findViewById(R.id.text_view);
-        button=(ImageButton)findViewById(R.id.ButtonView);
+        button=findViewById(R.id.ButtonView);
          textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
 
 
